@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import './AuthPage.css'; // Import du fichier CSS pour le style
+import './AuthPage.scss'; // Import du fichier CSS pour le style
 
-import logoHero from '../image/logo.svg';
-import HeroImage from '../image/desktop-wallpaper-stock-market.jpg';
+import logoHero from '../../image/logo.svg';
+import HeroImage from '../../image/desktop-wallpaper-stock-market.jpg';
 
 const AuthPage = () => {
   const [email, setEmail] = useState('');
@@ -27,6 +27,7 @@ const AuthPage = () => {
   };
 
   return (
+    <div className='AuthPage'>
     <div className='Container'>
       <div className='HeroSection'>
         <div className="auth-container">
@@ -98,6 +99,7 @@ const AuthPage = () => {
         <img src={HeroImage} className="HeroImage" alt="Hero Image" />
       </div>
     </div>
+  </div>
   );
 };
 

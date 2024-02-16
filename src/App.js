@@ -1,3 +1,5 @@
+import './App.css';
+import AuthPage from './pages/AuthPage/AuthPage.js';
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
