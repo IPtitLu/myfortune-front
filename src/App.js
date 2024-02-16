@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
+import Action from "./pages/Action";
+import Crypto from "./pages/Crypto";
+import Epargne from "./pages/Epargne";
+import Immobilier from "./pages/Immobilier";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+    return (
+        <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/action" element={<Action />} />
+            <Route path="/crypto" element={<Crypto />} />
+            <Route path="/epargne" element={<Epargne />} />
+            <Route path="/immobilier" element={<Immobilier />} />
+            <Route path="/compte" element={<Dashboard />} />
+            <Route path="/logout" element={<Dashboard />} />
+        </Routes>
+    );
 }
-
-export default App;
