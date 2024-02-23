@@ -1,8 +1,7 @@
 import React from "react";
-import "./Dashboard.css";
-import { Sidebar } from "../components/Sidebar";
-import { ModaleCreateActif } from "../components/ModaleCreateActif";
-import { ButtonAddActif } from "../components/ButtonAddActif";
+import { Sidebar } from "../../components/Sidebar";
+import { ModaleCreateActif } from "../../components/ModaleCreateActif";
+import { ButtonAddActif } from "../../components/ButtonAddActif";
 
 function Action() {
     return (
