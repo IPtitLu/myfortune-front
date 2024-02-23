@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 20px;
     margin-bottom: 150px;
 }
 .HeroSection{
@@ -52,10 +52,6 @@
     color: #fff;
     cursor: pointer;
     margin-top: 20px;
-  }
-  
-  button:hover {
-    
   }
   
   p {
