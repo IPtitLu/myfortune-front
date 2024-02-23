@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './AuthPage.scss'; // Import du fichier CSS pour le style
 
-import logoHero from '../../image/logo.svg';
-import HeroImage from '../../image/desktop-wallpaper-stock-market.jpg';
+import logoHero from '../../Assets/logo.svg';
+import HeroImage from '../../Assets/desktop-wallpaper-stock-market.jpg';
 
 const AuthPage = () => {
   const [email, setEmail] = useState('');
