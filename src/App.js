@@ -5,10 +5,12 @@ import Action from "./pages/Action";
 import Crypto from "./pages/Crypto";
 import Epargne from "./pages/Epargne";
 import Immobilier from "./pages/Immobilier";
+import AuthPage from "./pages/AuthPage";
 
 export default function App() {
     return (
         <Routes>
+            <Route path="authentification" element={<AuthPage />} />
             <Route path="/" element={<Dashboard />} />
             <Route path="/action" element={<Action />} />
             <Route path="/crypto" element={<Crypto />} />
