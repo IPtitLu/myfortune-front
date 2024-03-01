@@ -3,7 +3,7 @@ import { Chart as ChartJS } from 'chart.js/auto';
 import { Chart }            from 'react-chartjs-2';
 import { Doughnut,  Line } from 'react-chartjs-2';
 
-const App = () => {
+const FinancialChart = () => {
   const [cryptoData, setCryptoData] = useState({
     btc: 200,
     eth: 200,
@@ -108,4 +108,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default FinancialChart;

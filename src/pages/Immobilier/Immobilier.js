@@ -1,14 +1,17 @@
 import React from "react";
 import { Sidebar } from "../../components/Sidebar";
 import { ModaleCreateActif } from "../../components/ModaleCreateActif";
+import {actifs} from "../../pages/Mock"
+import ActifTable from "../../components/ActifTable";
 
 function Immobilier() {
     return (
         <>
             <Sidebar />
             <div className="p-4 sm:ml-64">
+                <h1 className="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-3xl dark:text-white">Mes immobiliers</h1>
                 <ModaleCreateActif />
-                <h1>Page d'immobilier</h1>
+                <ActifTable actifs={actifs}/>
             </div>
         </>
     );

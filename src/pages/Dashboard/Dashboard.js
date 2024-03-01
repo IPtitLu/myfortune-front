@@ -13,7 +13,8 @@ function Dashboard() {
     return (
         <>
             <Sidebar />
-            <div className="pt-8 sm:ml-64 flex items-center justify-between px-12">
+            <div className="pt-8 sm:ml-64 flex items-center justify-between px-12">                
+            <h1 className="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-3xl dark:text-white">Dashboard</h1>
                 <ModaleCreateActif />
                 <h1 className="font-bold">
                     {user.first_name} {user.last_name}
