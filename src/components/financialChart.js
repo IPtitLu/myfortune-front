@@ -3,6 +3,10 @@ import { Chart as ChartJS } from 'chart.js/auto';
 import { Chart }            from 'react-chartjs-2';
 import { Doughnut,  Line } from 'react-chartjs-2';
 
+import LineChart from './FinancialChart/LineChart';
+import DoughnutChart from './FinancialChart/DoughnutChart';
+import VerticalBarChart from './FinancialChart/VerticalBarChart';
+
 const FinancialChart = () => {
   const [cryptoData, setCryptoData] = useState({
     btc: 200,
@@ -66,44 +70,10 @@ const FinancialChart = () => {
   };
 
   return (
-    <div className="App" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-      <div>
-        <h1>Crypto Wealth Tracker</h1>
-        <div>
-          <label>
-            BTC:
-            <input
-              type="number"
-              value={cryptoData.btc}
-              onChange={(e) => handleInputChange('btc', e.target.value)}
-            />
-          </label>
-        </div>
-        <div>
-          <label>
-            ETH:
-            <input
-              type="number"
-              value={cryptoData.eth}
-              onChange={(e) => handleInputChange('eth', e.target.value)}
-            />
-          </label>
-        </div>
-        <div>
-          <label>
-            SOL:
-            <input
-              type="number"
-              value={cryptoData.sol}
-              onChange={(e) => handleInputChange('sol', e.target.value)}
-            />
-          </label>
-        </div>
-        <div style={{justifyContent: 'space-between', width: '300px'}}>
-          <Doughnut data={chartData} />
-          <Line data={totalChartData} />
-        </div>
-      </div>
+    <div style={{display: 'flex', flexDirection:'row', justifyContent: 'space-between', width: '100%', marginTop: '2Rem', alignItems: 'center'}}>
+          <LineChart />
+          <DoughnutChart />
+          <VerticalBarChart />
     </div>
   );
 };
