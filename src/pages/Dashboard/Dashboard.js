@@ -13,12 +13,14 @@ function Dashboard() {
     return (
         <>
             <Sidebar />
-            <div className="pt-8 sm:ml-64 flex items-center justify-between px-12">                
-            <h1 className="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-3xl dark:text-white">Dashboard</h1>
-                <ModaleCreateActif />
-                <h1 className="font-bold">
+            <div className="pt-8 sm:ml-64 flex items-center justify-between px-12 flex-wrap">
+                <h1 className="w-1/2 mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-3xl dark:text-white">
+                    Dashboard
+                </h1>
+                <h1 className="font-bold w-1/2 text-right">
                     {user.first_name} {user.last_name}
                 </h1>
+                <ModaleCreateActif />
             </div>
             <span className="h-1 w-full border-b-2"></span>
         </>
