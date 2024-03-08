@@ -15,8 +15,6 @@ const Landingpage = () => {
         setIsChecked(!isChecked);
     };
 
-    console.log("localstorage : ", localStorage.getItem("token"));
-
     return (
         <>
             <div className="main">

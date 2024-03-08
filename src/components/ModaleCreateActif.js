@@ -5,6 +5,10 @@ import { useState } from "react";
 export function ModaleCreateActif() {
     const [openModal, setOpenModal] = useState(false);
 
+    const handleCloseModal = () => {
+        setOpenModal(false);
+    };
+
     return (
         <>
             <Button
@@ -13,13 +17,13 @@ export function ModaleCreateActif() {
             >
                 <span className="font-bold">Ajouter un actif</span>
             </Button>
-            <Modal show={openModal} onClose={() => setOpenModal(false)}>
+            <Modal show={openModal} onClose={handleCloseModal}>
                 <Modal.Header>
                     Créer un actif (ex : Bitcoin, Action, Livret A..)
                 </Modal.Header>
                 <Modal.Body>
                     <div className="py-4">
-                        <ActifForm />
+                        <ActifForm onCloseModal={handleCloseModal} />
                     </div>
                 </Modal.Body>
             </Modal>

@@ -26,10 +26,14 @@ export default function App() {
                 try {
                     // Décoder le token JWT pour récupérer les informations
                     const decodedToken = jwtDecode(token);
-                    const userId = decodedToken.id;
+                    console.log("user : ", decodedToken);
 
                     // Créer un objet utilisateur temporaire avec seulement l'ID
-                    const tempUser = { id: userId };
+                    const tempUser = {
+                        id: decodedToken.id,
+                        first_name: decodedToken.first_name,
+                        last_name: decodedToken.last_name,
+                    };
                     setUser(tempUser); // Mettre à jour l'état de l'utilisateur avec les informations temporaires
                     localStorage.setItem("userFetched", "true");
                 } catch (error) {
@@ -68,7 +72,10 @@ export default function App() {
                     </>
                 ) : (
                     <>
-                        <Route path="*" element={<AuthPage />} />
+                        <Route
+                            path="/authentification"
+                            element={<AuthPage />}
+                        />
                     </>
                 )}
             </Routes>

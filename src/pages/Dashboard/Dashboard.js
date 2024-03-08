@@ -13,10 +13,13 @@ function Dashboard() {
     return (
         <>
             <Sidebar />
-            <div className="p-4 sm:ml-64">
+            <div className="pt-8 sm:ml-64 flex items-center justify-between px-12">
                 <ModaleCreateActif />
-                <h1>{user.id}</h1>
+                <h1 className="font-bold">
+                    {user.first_name} {user.last_name}
+                </h1>
             </div>
+            <span className="h-1 w-full border-b-2"></span>
         </>
     );
 }

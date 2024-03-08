@@ -1,7 +1,61 @@
-export function ActifForm() {
+import { useState } from "react";
+
+export function ActifForm({ onCloseModal }) {
+    const [formData, setFormData] = useState({
+        libelle: "",
+        category: "",
+        montant: "",
+        date: "",
+    });
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        const token = localStorage.getItem("token"); // Récupère le token d'authentification du local storage
+
+        try {
+            const response = await fetch(
+                "http://localhost:3333/api/actifs/create-actif",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${token}`,
+                    },
+                    body: JSON.stringify(formData),
+                }
+            );
+
+            if (!response.ok) {
+                throw new Error("Erreur lors de la création de l'actif");
+            }
+
+            // Réinitialise le formulaire après la soumission réussie
+            setFormData({
+                libelle: "",
+                category: "",
+                montant: "",
+                date: "",
+            });
+            onCloseModal();
+        } catch (error) {
+            console.error("Erreur:", error);
+            alert("Une erreur est survenue lors de la création de l'actif");
+        }
+    };
+
+    const handleChange = (event) => {
+        const { id, value } = event.target;
+        console.log("id : ", id);
+        setFormData((prevFormData) => ({
+            ...prevFormData,
+            [id]: id === "category" ? event.target.value : value,
+        }));
+    };
+
     return (
         <>
-            <form className="max-w-sm mx-auto">
+            <form className="max-w-sm mx-auto" onSubmit={handleSubmit}>
                 <div className="mb-5">
                     <label
                         htmlFor="libelle"
@@ -12,6 +66,8 @@ export function ActifForm() {
                     <input
                         type="text"
                         id="libelle"
+                        value={formData.libelle}
+                        onChange={handleChange}
                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder="ex : Bitcoin"
                         required
@@ -25,7 +81,9 @@ export function ActifForm() {
                         Catégorie
                     </label>
                     <select
-                        id="countries"
+                        id="category"
+                        value={formData.category}
+                        onChange={handleChange}
                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     >
                         <option defaultValue="Choisissez une catégorie" hidden>
@@ -47,6 +105,8 @@ export function ActifForm() {
                     <input
                         type="text"
                         id="montant"
+                        value={formData.montant}
+                        onChange={handleChange}
                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder="2000"
                         required
@@ -62,6 +122,8 @@ export function ActifForm() {
                     <input
                         type="date"
                         id="date"
+                        value={formData.date}
+                        onChange={handleChange}
                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         required
                     />
