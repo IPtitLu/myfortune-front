@@ -53,7 +53,7 @@ const AuthPage = () => {
 
                 // Redirection vers le dashboard
                 window.location.href =
-                    "https://myfortune-back.onrender.com/dashboard";
+                    "https://myfortune-front.vercel.app/dashboard";
             } else {
                 console.error("Token non trouvé dans la réponse.");
             }
