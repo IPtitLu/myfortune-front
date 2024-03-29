@@ -23,10 +23,10 @@ const AuthPage = () => {
         let body = {};
 
         if (isLogin) {
-            url = "http://localhost:3333/api/users/login";
+            url = "https://myfortune-back.onrender.com/api/users/login";
             body = { email, password };
         } else {
-            url = "http://localhost:3333/api/users/register";
+            url = "https://myfortune-back.onrender.com/api/users/register";
             body = { email, password, firstName, lastName };
         }
 
@@ -52,7 +52,8 @@ const AuthPage = () => {
                 localStorage.setItem("token", data.token);
 
                 // Redirection vers le dashboard
-                window.location.href = "http://localhost:3000/dashboard";
+                window.location.href =
+                    "https://myfortune-back.onrender.com/dashboard";
             } else {
                 console.error("Token non trouvé dans la réponse.");
             }

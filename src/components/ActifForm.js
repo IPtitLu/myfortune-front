@@ -15,7 +15,7 @@ export function ActifForm({ onCloseModal }) {
 
         try {
             const response = await fetch(
-                "http://localhost:3333/api/actifs/create-actif",
+                "https://myfortune-back.onrender.com/api/actifs/create-actif",
                 {
                     method: "POST",
                     headers: {
