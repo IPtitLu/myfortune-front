@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { HiMenu } from "react-icons/hi";
 import "./landingPage.scss";
-import hero from "../../assets/hero.png";
-import whywe from "../../assets/whywe.png";
-import singleUser from "../../assets/single.png";
-import multipalUser from "../../assets/multipal.png";
-import extraMultipalUser from "../../assets/extramul.png";
-import myfortunelogo from "../../assets/myfortunelogo.png";
+import hero from "../../Assets/hero.png";
+import whywe from "../../Assets/whywe.png";
+import singleUser from "../../Assets/single.png";
+import multipalUser from "../../Assets/multipal.png";
+import extraMultipalUser from "../../Assets/extramul.png";
+import myfortunelogo from "../../Assets/myfortunelogo.png";
 import { Link } from "react-router-dom";
 
 const Landingpage = () => {

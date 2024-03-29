@@ -1,4 +1,4 @@
-import LogoMyFortune from "../assets/myfortunelogo.png";
+import LogoMyFortune from "../Assets/myfortunelogo.png";
 import { useLocation } from "react-router-dom";
 import {
     FaBitcoin,
